@@ -1,7 +1,21 @@
+import java.util.Scanner;
+
 public class SearchNilai17 {
     public static void main(String[] args) {
-        int[] nilai = {78, 65, 90, 55, 88, 72};
-        int key = 90;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Masukkan banyaknya nilai yang akan diinput: ");
+        int jmlNilai = sc.nextInt();
+
+        int[] nilai = new int[jmlNilai];
+
+        for (int i = 0; i < nilai.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + ": ");
+            nilai[i] = sc.nextInt();
+        }
+
+        System.out.print("Masukkan nilai yang ingin dicari: ");
+        int key = sc.nextInt();
         boolean ditemukan = false;
 
         for (int i = 0; i < nilai.length; i++) {
@@ -11,9 +25,10 @@ public class SearchNilai17 {
                 break;
             }
         }
-
         if (!ditemukan) {
             System.out.println("Nilai " + key + " tidak ditemukan.");
         }
+
+        sc.close();
     }
 }
