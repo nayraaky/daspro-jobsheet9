@@ -6,6 +6,7 @@ public class SearchNilai17 {
 
         System.out.print("Masukkan banyaknya nilai yang akan diinput: ");
         int jmlNilai = sc.nextInt();
+        System.out.println("+----------------------------------------------+");
 
         int[] nilai = new int[jmlNilai];
 
@@ -14,10 +15,13 @@ public class SearchNilai17 {
             nilai[i] = sc.nextInt();
         }
 
+        System.out.println("+----------------------------------------------+");
+
         System.out.print("Masukkan nilai yang ingin dicari: ");
         int key = sc.nextInt();
         boolean ditemukan = false;
 
+        System.out.println("+---------------------------------------------+");
         for (int i = 0; i < nilai.length; i++) {
             if (nilai[i] == key) {
                 System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + i);
@@ -26,7 +30,8 @@ public class SearchNilai17 {
             }
         }
         if (!ditemukan) {
-            System.out.println("Nilai " + key + " tidak ditemukan.");
+            System.out.println("Nilai yang dicari tidak ditemukan.");
+            System.out.println("Nilai " + key + " tidak ada di dalam array dari "+ nilai.length + " elemen: " + java.util.Arrays.toString(nilai));
         }
 
         sc.close();
